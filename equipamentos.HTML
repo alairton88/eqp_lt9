@@ -1,0 +1,1997 @@
+<DOCTYPE html> 
+	<html lang="pt-BR"> 	
+	 <head>
+		<meta charset="UTF-8">
+    	<meta name="viewport" content="width=device-width, initial-scale=1.0">   
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+ 
+   		 <meta http-equiv="expires" content="0">
+
+	 <title>EQUIPAMENTOS-DNIT </title> 	 
+	 
+	<style>
+ body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    header {
+	  background: linear-gradient(to right, #2980b9, #9ed2f5);
+      color: #fff;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+	  transform: translateX(100%);
+      animation: moveToRight 1s ease-in-out forwards;
+    }
+
+    #menu-icon {
+      font-size: 24px;
+      cursor: pointer;
+	  transform: translateX(-100%);
+     animation: moveToLeft 3s ease-in-out forwards;
+    }
+
+    h1 {
+      margin: 0;
+      margin-left: 10px;
+	  opacity: 0;
+      animation: fadeIn 3s ease-in-out forwards;
+}
+    
+
+    #menu {
+      display: none;
+      position: absolute;
+      top: 60px;
+      left: 10px;
+      background-color: #333;
+	  padding: 0px;      
+      margin: 0;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+
+    #menu a {
+      display: block;
+      color: #fff;
+      text-decoration: none;
+      padding: 10px;
+	  margin: 0;
+      margin-bottom: 5px;
+    }
+
+    #menu a:hover {
+      background-color: #555;
+    }
+
+#tabela{
+	width:100%;
+	border:solid 1px;
+	text-align:center;
+   	border-collapse:collapse; 
+	   margin-top: 15px; /* Ajuste para compensar a barra superior fixa */
+           
+	
+}
+
+#tabela tbody tr{
+	border:solid 1px;
+	height:40px;
+	cursor:pointer;
+	
+}
+
+#tabela thead{
+	background:rgb(88, 88, 88);;
+	color: white;
+	
+}
+
+#tabela thead th:nth-child(1){
+	width:100px;
+	
+}
+
+#tabela input{
+	color:#000000;
+	width:100%;
+	
+}
+@keyframes moveToRight {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes moveToLeft {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}  
+ /* Estilos para telas menores ou iguais a 768 pixels de largura */
+@media screen and (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+
+    table {
+        font-size: 14px;
+    }
+
+    /* Adicione mais estilos conforme necessário para telas menores */
+}
+
+    
+	</style>
+	</head>	
+	
+  <header class="move-to-right">
+    <!-- Ícone de menu -->
+    <i id="menu-icon" class="fas fa-bars" onclick="toggleMenu()"></i>
+    <h1>Equipamentos</h1>
+  </header>
+
+  <!-- Menu -->
+  <div id="menu">
+    <a href="./index.html"><i class="fas fa-home"></i> Menu</a>
+ 
+  </div>
+		
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script> 
+		
+	
+	
+		<div id="divConteudo">
+			<table id="tabela" >
+				
+				<thead  >
+					<tr >
+						
+						<th>BR</th>
+						<th>KM</th>
+						<th>MUNICIPIO</th>
+						<th>SENTIDO</th>
+						<th>FAIXA</th>
+						<th>TIPO</th>
+						<th>VEL.</th>
+						<th>COD. INSTALAÇAO</th>
+						<th>EQUIPAMENTO</th>
+						<th>COD. LOCAL</th>
+						<th>SIOR</th>
+						<th>DTF</th>
+						<th>OPER.</th>					
+						<th>AFERIDO</th>
+						<th>IP</th>
+						
+	
+						
+					</tr>
+					<tr>
+						<th><input type="text" id="txtColuna1"/></th>
+						<th><input type="text" id="txtColuna2"/></th>
+						<th><input type="text" id="txtColuna3"/></th>
+						<th><input type="text" id="txtColuna4"/></th>
+						<th><input type="text" id="txtColuna5"/></th>
+						<th><input type="text" id="txtColuna6"/></th>
+						<th><input type="text" id="txtColuna7"/></th>
+						<th><input type="text" id="txtColuna8"/></th>
+						<th><input type="text" id="txtColuna9"/></th>
+						<th><input type="text" id="txtColuna10"/></th>
+						<th><input type="text" id="txtColuna11"/></th>
+						<th><input type="text" id="txtColuna12"/></th>
+						<th><input type="text" id="txtColuna13"/></th>
+						<th><input type="text" id="txtColuna14"/></th>
+						<th><input type="text" id="txtColuna15"/></th>
+					</tr>				
+				</thead>					
+	
+				
+				<tbody >
+						<tr>
+					<td>020</td>
+					<td>57,2</td>
+					<td>BRASILIA</td>
+					<td>PC-1,PC-2</td>
+					<td>2</td>
+					<td>REV</td>
+					<td>40</td>
+					<td>DFB20010003</td>
+					<td><b>FLICD2002A00458</b></td>
+					<td>961002</td>
+					<td>ONLINE</td>
+					<td>ONLINE</td>
+					<td>CLARO</td>
+					<td>26/07/2022</td>
+					
+										<td> <a href = "http://192.168.201.34:8080/DataVision-WebApp/login.xhtml?" target="_blank"> 192.168.201.34</td>  </a>
+					
+				</tr>
+				<tr>
+					<td>070</td>
+					<td>1,1</td>
+					<td>BRASILIA</td>
+					<td>PC-1,PC-2,PC-3</td>
+					<td>3</td>
+					<td>REV</td>
+					<td>60</td>
+					<td>DFB20010004 </td>
+					<td><b>FLICD2002A00461</b></td>
+					<td>961003</td>
+					<td>ONLINE</td>
+					<td>ONLINE</td>
+					<td>VIVO</td>
+					<td>02/08/2022</td>
+					
+										<td> <a href = "http://192.168.201.36:8080/DataVision-WebApp/login.xhtml?" target="_blank"> 192.168.201.36</td> </a>
+
+				</tr>				
+				<tr>
+					<td>070</td>
+					<td>6</td>
+					<td>BRASILIA</td>
+					<td>PC-1,PC-2</td>
+					<td>2</td>
+					<td>REV</td>
+					<td>60</td>
+					<td>DFB20020015</td>
+					<td><b>FLICD2002A00464</b></td>
+					<td>961007</td>
+					<td>ONLINE</td>
+					<td>ONLINE</td>
+					<td>VIVO</td>
+					<td>09/08/2022</td>
+										<td> <a href = "http://192.168.201.40:8080/DataVision-WebApp/login.xhtml?" target="_blank"> 192.168.201.40</td>  </a>
+
+				</tr>
+				<tr>
+					<td>070</td>
+					<td>6,7</td>
+					<td>BRASILIA</td>
+					<td>PD-1,PD-2,PD-3</td>
+					<td>3</td>
+					<td>REV</td>
+					<td>60</td>
+					<td>DFB23040027</td>
+					<td><b>FLICD0523A00760</b></td>
+					<td>961066</td>
+					<td>ONLINE</td>
+					<td>ONLINE</td>
+					<td>CLARO</td>
+					<td>23/05/2023</td>
+										<td> <a href = "http://192.168.201.38:8080/DataVision-WebApp/login.xhtml?" target="_blank"> 192.168.201.38</td>  </a>
+
+				</tr>
+								<tr>
+					<td>060</td>
+					<td>165,9</td>
+					<td>GOIANIA</td>
+					<td>PC-1,PC-2</td>
+					<td>2</td>
+					<td>CEV</td>
+					<td>80</td>
+					<td>GOR20030035 </td>
+					<td><b>FLISD2003A00473</b></td>
+					<td>962007</td>
+					<td>ONLINE</td>
+					<td>ONLINE</td>
+					<td>CLARO</td>
+					<td>01/08/2022</td>
+										<td> <a href = "http://192.168.201.52:8080/DataVision-WebApp/login.xhtml?" target="_blank"> 192.168.201.52</td>  </a>
+
+				</tr>
+												<tr>
+					<td>060</td>
+					<td>166,7</td>
+					<td>GOIANIA</td>
+					<td>PD-1,PD-2</td>
+					<td>3</td>
+					<td>CEV</td>
+					<td>80</td>
+					<td>GOR20020028 </td>
+					<td><b>FLISD2003A00472</b></td>
+					<td>962006</td>
+					<td>ONLINE</td>
+					<td>ONLINE</td>
+					<td>CLARO</td>
+					<td>01/08/2022</td>
+										<td> <a href = "http://192.168.201.50:8080/DataVision-WebApp/login.xhtml?" target="_blank"> 192.168.201.50</td>  </a>
+
+				</tr>
+																<tr>
+					<td>060</td>
+					<td>181</td>
+					<td>ABADIA DE GOIAS</td>
+					<td>PD-1,PD-2</td>
+					<td>2</td>
+					<td>CEV</td>
+					<td>80</td>
+					<td>GOR20020027 </td>
+					<td><b>FLISD2003A00474</b></td>
+					<td>962008</td>
+					<td>OFFLINE</td>
+					<td>ONLINE</td>
+					<td>CLARO</td>
+					<td>08/08/2022</td>
+										<td> <a href = "http://192.168.202.12:8080/DataVision-WebApp/login.xhtml?" target="_blank"> 192.168.202.12</td>  </a>
+
+				</tr>
+																				<tr>
+					<td>060</td>
+					<td>187,6</td>
+					<td>GUAPO</td>
+					<td>PC-1,PC-2,PD-1,PD-2</td>
+					<td>4</td>
+					<td>CEV</td>
+					<td>80</td>
+					<td>GOR20020026 </td>
+					<td><b>FLISD2003A00475</b></td>
+					<td>962009</td>
+					<td>ONLINE</td>
+					<td>ONLINE</td>
+					<td>CLARO</td>
+					<td>01/08/2022</td>
+										<td> <a href = "http://192.168.201.70:8080/DataVision-WebApp/login.xhtml?" target="_blank"> 192.168.201.70</td>  </a>
+
+				</tr>
+																								<tr>
+					<td>060</td>
+					<td>251,5</td>
+					<td>INDIARA</td>
+					<td>PC-1,PC-2,PC-3</td>
+					<td>3</td>
+					<td>CEV</td>
+					<td>80</td>
+					<td>GOR20020013  </td>
+					<td><b>FLISD2003A00476</b></td>
+					<td>962010</td>
+					<td>ONLINE</td>
+					<td>ONLINE</td>
+					<td>CLARO</td>
+					<td>25/07/2022</td>
+										<td> <a href = "http://192.168.201.74:8080/DataVision-WebApp/login.xhtml?" target="_blank"> 192.168.201.74</td>  </a>
+
+				</tr>
+																												<tr>
+					<td>060</td>
+					<td>251,5</td>
+					<td>INDIARA</td>
+					<td>PD-1,PD-2,PD-3</td>
+					<td>3</td>
+					<td>CEV</td>
+					<td>80</td>
+					<td>GOR20020013  </td>
+					<td><b>FLISD2003A00477</b></td>
+					<td>962011</td>
+					<td>ONLINE</td>
+					<td>ONLINE</td>
+					<td>CLARO</td>
+					<td>25/07/2022</td>
+					
+					
+										<td> <a href = "http://192.168.201.72:8080/DataVision-WebApp/login.xhtml?" target="_blank"> 192.168.201.72</td>  </a>
+
+				</tr>
+																												<tr>
+					<td>060</td>
+					<td>342,8</td>
+					<td>STO. ANTONIO DA BARRA</td>
+					<td>PD-1,PD-2 , PC-1,PC-2</td>
+					<td>4</td>
+					<td>CEV</td>
+					<td>80</td>
+					<td>GOR24040045</td>
+					<td><b>FLISD0424A00789</b></td>
+					<td>962078</td>
+					<td>ONLINE</td>
+					<td>ONLINE</td>
+					<td>VIVO</td>
+					<td>25/07/2022</td>
+										<td> <a href = "http://192.168.201.76:8080/DataVision-WebApp/login.xhtml?" target="_blank"> 192.168.201.76</td>  </a>
+
+				</tr>
+																												<tr>
+					<td>060</td>
+					<td>382,2</td>
+					<td>RIO VERDE</td>
+					<td>PC-1,PC-2,PC-3</td>
+					<td>3</td>
+					<td>CEV</td>
+					<td>80</td>
+					<td>GOR20020015</td>
+					<td><b>FLISD2003A00478</b></td>
+					<td>962013</td>
+					<td>OFFLINE</td>
+					<td>ONLINE</td>
+					<td>VIVO</td>
+					<td>25/07/2022</td>
+										<td> <a href = "http://192.168.201.78:8080/DataVision-WebApp/login.xhtml?" target="_blank"> 192.168.201.78</td>  </a>
+
+				</tr>
+																												<tr>
+					<td>060</td>
+					<td>383,2</td>
+					<td>RIO VERDE</td>
+					<td>PD-1,PD-2,PD-3</td>
+					<td>3</td>
+					<td>CEV</td>
+					<td>80</td>
+					<td>GOR20020016 </td>
+					<td><b>FLISD2003A00479</b></td>
+					<td>962014</td>
+					<td>OFFLINE</td>
+					<td>ONLINE</td>
+					<td>VIVO</td>
+					<td>25/07/2022</td>
+										<td> <a href = "http://192.168.202.18:8080/DataVision-WebApp/login.xhtml?" target="_blank"> 192.168.202.18</td>  </a>
+
+				</tr>
+																												<tr>
+					<td>060</td>
+					<td>385</td>
+					<td>RIO VERDE</td>
+					<td>PD-1,PD-2,PD-3</td>
+					<td>3</td>
+					<td>CEV</td>
+					<td>80</td>
+					<td>GOR20020017 </td>
+					<td><b>FLISD2003A00480</b></td>
+					<td>962015</td>
+					<td>OFFLINE</td>
+					<td>ONLINE</td>
+					<td>VIVO</td>
+					<td>25/07/2022</td>
+										<td> <a href = "http://192.168.202.20:8080/DataVision-WebApp/login.xhtml?" target="_blank"> 192.168.202.20</td>  </a>
+
+				</tr>
+																												<tr>
+					<td>364</td>
+					<td>195,85</td>
+					<td>JATAI</td>
+					<td>PD-1,PD-2</td>
+					<td>2</td>
+					<td>REV</td>
+					<td>40</td>
+					<td>GOB20010003</td>
+					<td><b>FLICD2003A00487</b></td>
+					<td>962022</td>
+					<td>ONLINE</td>
+					<td>ONLINE</td>
+					<td>VIVO</td>
+					<td>26/07/2022</td>
+										<td> <a href = "http://192.168.201.66:8080/DataVision-WebApp/login.xhtml?" target="_blank"> 192.168.201.66</td>  </a>
+
+				</tr>
+																																<tr>
+					<td>364</td>
+					<td>196,3</td>
+					<td>JATAI</td>
+					<td>PD-1,PD-2</td>
+					<td>2</td>
+					<td>REV</td>
+					<td>40</td>
+					<td>GOB20010004 </td>
+					<td><b>FLICD2003A00488</b></td>
+					<td>962023</td>
+					<td>OFFLINE</td>
+					<td>ONLINE</td>
+					<td>VIVO</td>
+					<td>26/07/2022</td>
+										<td> <a href = "http://192.168.202.14:8080/DataVision-WebApp/login.xhtml?" target="_blank"> 192.168.202.14</td>  </a>
+
+				</tr>
+																												<tr>
+					<td>364</td>
+					<td>195,45</td>
+					<td>JATAI</td>
+					<td>PC-1,PC-2</td>
+					<td>2</td>
+					<td>REV</td>	
+					<td>60</td>
+					<td>GOB20020011 </td>
+					<td><b>FLICD2003A00486</b></td>
+					<td>962021</td>
+					<td>ONLINE</td>
+					<td>ONLINE</td>
+					<td>VIVO</td>
+					<td>26/07/2022</td>
+										<td> <a href = "http://192.168.201.62:8080/DataVision-WebApp/login.xhtml?" target="_blank"> 192.168.201.62</td>  </a>
+
+				</tr>
+																																<tr>
+					<td>364</td>
+					<td>299,6</td>
+					<td>MINEIROS</td>
+					<td>PD-1,PD-2</td>
+					<td>2</td>
+					<td>REV</td>	
+					<td>40</td>
+					<td>GOB20020017 </td>
+					<td><b>FLICD2003A00490</b></td>
+					<td>962024</td>
+					<td>OFFLINE</td>
+					<td>ONLINE</td>
+					<td>VIVO</td>
+					<td>26/07/2022</td>
+										<td> <a href = "http://192.168.202.16:8080/DataVision-WebApp/login.xhtml?" target="_blank"> 192.168.202.16</td>  </a>
+
+				</tr>
+																																				<tr>
+					<td>251</td>
+					<td>22,8</td>
+					<td>BRASILIA</td>
+					<td>PC-1,PD-1</td>
+					<td>2</td>
+					<td>REV</td>	
+					<td>60</td>
+					<td>DFB22060024</td>
+					<td><b>FLICD2002A00448</b></td>
+					<td>961064</td>
+					<td>OFFLINE</td>
+					<td>ONLINE</td>
+					<td></td>
+					<td>10/06/2022</td>
+										<td> <a href = "http://192.168.201.20:8080/DataVision-WebApp/login.xhtml?" target="_blank"> 192.168.201.20</td>  </a>
+
+				</tr>
+																																<tr>
+					<td>020</td>
+					<td>21,2</td>
+					<td>FORMOSA</td>
+					<td>PC-1</td>
+					<td>1</td>
+					<td>REV</td>	
+					<td>60</td>
+					<td>GOB21110023</td>
+					<td><b>FLICD2002A00447</b></td>
+					<td>962062</td>
+					<td>OFFLINE</td>
+					<td>ONLINE</td>
+					<td>VIVO</td>
+					<td></td>
+										<td> <a href = "http://192.168.201.18:8080/DataVision-WebApp/login.xhtml?" target="_blank"> 192.168.201.18</td>  </a>
+
+				</tr>
+																																<tr>
+					<td>020</td>
+					<td>185</td>
+					<td>ALVORADA DO NORTE</td>
+					<td>PC-1</td>
+					<td>1</td>
+					<td>REV</td>	
+					<td>60</td>
+					<td>GOB22020024</td>
+					<td><b>FLICD2002A00446</b></td>
+					<td>962061</td>
+					<td>OFFLINE</td>
+					<td>ONLINE</td>
+					<td>VIVO</td>
+					<td></td>
+										<td> <a href = "http://192.168.201.16:8080/DataVision-WebApp/login.xhtml?" target="_blank"> 192.168.201.16</td>  </a>
+
+				</tr>
+																																<tr>
+					<td>364</td>
+					<td>302,200</td>
+					<td>MINEIROS</td>
+					<td>PC-1,PC-2</td>
+					<td>2</td>
+					<td>CEV</td>	
+					<td>60</td>
+					<td>GOR22080039</td>
+					<td><b>FLISD2002A00450</b></td>
+					<td>962067</td>
+					<td>OFFLINE</td>
+					<td>ONLINE</td>
+					<td>CLARO</td>
+					<td>04/08/21</td>
+										<td> <a href = "http://192.168.202.6:8080/DataVision-WebApp/login.xhtml?" target="_blank"> 192.168.202.6</td>  </a>
+
+				</tr>
+																																<tr>
+					<td>364</td>
+					<td>302,170</td>
+					<td>MINEIROS</td>
+					<td>PD-1,PD-2,PD-3</td>
+					<td>3</td>
+					<td>CEV</td>	
+					<td>60</td>
+					<td>GOR22060038</td>
+					<td><b>FLISD2002A00449</b></td>
+					<td>962066</td>
+					<td>OFFLINE</td>
+					<td>ONLINE</td>
+					<td>CLARO</td>
+					<td>27/08/2021</td>
+										<td> <a href = "http://192.168.202.4:8080/DataVision-WebApp/login.xhtml?" target="_blank">192.168.202.4 </td></a>
+
+				</tr>
+																																				<tr>
+					<td>080</td>
+					<td>14,6</td>
+					<td>BRASILIA</td>
+					<td>PC-1</td>
+					<td>1</td>
+					<td>REV</td>	
+					<td>50</td>
+					<td>DFB20020010 </td>
+					<td><b>FLICD2002A00469</b></td>
+					<td>961015</td>
+					<td>ONLINE</td>
+					<td>ONLINE</td>
+					<td>CLARO</td>
+					<td>26/07/2022</td>
+										<td> <a href = "http://192.168.201.54:8080/DataVision-WebApp/login.xhtml?" target="_blank"> 192.168.201.54</td>  </a>
+
+				</tr>
+																																<tr>
+					<td>080</td>
+					<td>14,9</td>
+					<td>BRASILIA</td>
+					<td>PD-1</td>
+					<td>1</td>
+					<td>REV</td>	
+					<td>50</td>
+					<td>DFB20020017 </td>
+					<td><b>FLICD2002A00470</b></td>
+					<td>961016</td>
+					<td>ONLINE</td>
+					<td>ONLINE</td>
+					<td>CLARO</td>
+					<td>06/08</td>
+										<td> <a href = "http://192.168.201.60:8080/DataVision-WebApp/login.xhtml?" target="_blank"> 192.168.201.60</td>  </a>
+
+				</tr>
+																																<tr>
+					<td>080</td>
+					<td>17,3</td>
+					<td>BRASILIA</td>
+					<td>PD-1</td>
+					<td>1</td>
+					<td>CEV</td>	
+					<td>60</td>
+					<td>DFR20020005 </td>
+					<td><b>FLISD2002A00454</b></td>
+					<td>961017</td>
+					<td>ONLINE</td>
+					<td>ONLINE</td>
+					<td>CLARO</td>
+					<td>26/07/2022</td>
+										<td> <a href = "http://192.168.201.58:8080/DataVision-WebApp/login.xhtml?" target="_blank"> 192.168.201.58</td>  </a>
+
+				</tr>
+					<td>070</td>
+					<td>4,45</td>
+					<td>AGUAS LINDAS</td>
+					<td>PD-1,PD-2,PD-3</td>
+					<td>3</td>
+					<td>CEV</td>	
+					<td>60</td>
+					<td>GOR20020022 </td>
+					<td><b>FLISD2004A00505</b></td>
+					<td>962039</td>
+					<td>ONLINE</td>
+					<td>ONLINE</td>
+					<td>CLARO</td>
+					<td>08/09/2021</td>
+										<td> <a href = "http://192.168.201.106:8080/DataVision-WebApp/login.xhtml?" target="_blank">192.168.201.106 </td>  </a>
+
+				</tr>
+					<td>070</td>
+					<td>5,9</td>
+					<td>AGUAS LINDAS</td>
+					<td>PC-1,PC-2,PD-1,PD-2</td>
+					<td>4</td>
+					<td>CEV</td>	
+					<td>60</td>
+					<td>GOR20020012 </td>
+					<td><b>FLISD2004A00506</b></td>
+					<td>962040</td>
+					<td>ONLINE</td>
+					<td>ONLINE</td>
+					<td>CLARO</td>
+					<td>08/09/2021</td>
+										<td> <a href = "http://192.168.201.108:8080/DataVision-WebApp/login.xhtml?" target="_blank">192.168.201.108 </td>  </a>
+
+				</tr>
+
+					<td>070</td>
+					<td>6,6</td>
+					<td>AGUAS LINDAS</td>
+					<td>PC-1,PC-2,PD-1,PD-2</td>
+					<td>4</td>
+					<td>CEV</td>	
+					<td>60</td>
+					<td>GOR20020011 </td>
+					<td><b>FLISD2004A00507</b></td>
+					<td>962041</td>
+					<td>OFFLINE</td>
+					<td>ONLINE</td>
+					<td>CLARO</td>
+					<td>09/09/2021</td>
+										<td> <a href = "http://192.168.202.34:8080/DataVision-WebApp/login.xhtml?" target="_blank">192.168.202.34 </td>  </a>
+
+				</tr>
+
+					<td>070</td>
+					<td>11,1</td>
+					<td>AGUAS LINDAS</td>
+					<td>PC-1,PC-2,PC-3</td>
+					<td>3</td>
+					<td>CEV</td>	
+					<td>60</td>
+					<td>GOR20020008 </td>
+					<td><b>FLISD2004A00516</b></td>
+					<td>962050</td>
+					<td>ONLINE</td>
+					<td>ONLINE</td>
+					<td>CLARO</td>
+					<td>09/09/2021</td>
+										<td> <a href = "http://192.168.201.114:8080/DataVision-WebApp/login.xhtml?" target="_blank">192.168.201.114 </td>  </a>
+
+				</tr>
+
+					<td>070</td>
+					<td>11,1</td>
+					<td>AGUAS LINDAS</td>
+					<td>PD-1,PD-2,PD-3</td>
+					<td>3</td>
+					<td>CEV</td>	
+					<td>60</td>
+					<td>GOR20020008 </td>
+					<td><b>FLISD2004A00517</b></td>
+					<td>962051</td>
+					<td>ONLINE</td>
+					<td>ONLINE</td>
+					<td>CLARO</td>
+					<td>09/09/2021</td>
+										<td> <a href = "http://192.168.201.116:8080/DataVision-WebApp/login.xhtml?" target="_blank">192.168.201.116 </td>  </a>
+
+				</tr>
+									<td>070</td>
+					<td>8,2</td>
+					<td>AGUAS LINDAS</td>
+					<td>PD-1,PD-2,PD-3</td>
+					<td>3</td>
+					<td>CEV</td>	
+					<td>60</td>
+					<td>GOR20020009 </td>
+					<td><b>FLISD2004A00511</b></td>
+					<td>962045</td>
+					<td>ONLINE</td>
+					<td>ONLINE</td>
+					<td>CLARO</td>
+					<td>29/09/2021</td>
+										<td> <a href = "http://192.168.201.112:8080/DataVision-WebApp/login.xhtml?" target="_blank">192.168.201.112 </td>  </a>
+
+				</tr>
+					<td>070</td>
+					<td>8,2</td>
+					<td>AGUAS LINDAS</td>
+					<td>PC-1,PC-2,PC-3</td>
+					<td>3</td>
+					<td>CEV</td>	
+					<td>60</td>
+					<td>GOR20020009 </td>
+					<td><b>FLISD2004A00510</b></td>
+					<td>962044</td>
+					<td>ONLINE</td>
+					<td>ONLINE</td>
+					<td>CLARO</td>
+					<td>29/09/2021</td>
+										<td> <a href = "http://192.168.201.110:8080/DataVision-WebApp/login.xhtml?" target="_blank">192.168.201.110 </td>  </a>
+
+				</tr>
+					<td>070</td>
+					<td>4</td>
+					<td>AGUAS LINDAS</td>
+					<td>PD-1,PD-2,PD-3</td>
+					<td>3</td>
+					<td>CEV</td>	
+					<td>60</td>
+					<td>GOR20020010 </td>
+					<td><b>FLISD2004A00504</b></td>
+					<td>962038</td>
+					<td>ONLINE</td>
+					<td>ONLINE</td>
+					<td>CLARO</td>
+					<td>29/09/2021</td>
+										<td> <a href = "http://192.168.201.104:8080/DataVision-WebApp/login.xhtml?" target="_blank">192.168.201.104</td>  </a>
+
+				</tr>
+					<td>070</td>
+					<td>4</td>
+					<td>AGUAS LINDAS</td>
+					<td>PC-1,PC-2,PC-3</td>
+					<td>3</td>
+					<td>CEV</td>	
+					<td>60</td>
+					<td>GOR20020010 </td>
+					<td><b>FLISD2004A00503</b></td>
+					<td>962037</td>
+					<td>ONLINE</td>
+					<td>ONLINE</td>
+					<td>CLARO</td>
+					<td>08/09/2021</td>
+										<td> <a href = "http://192.168.201.80:8080/DataVision-WebApp/login.xhtml?" target="_blank">192.168.201.80</td>  </a>
+
+				</tr>
+					<td>070</td>
+					<td>1,25</td>
+					<td>AGUAS LINDAS</td>
+					<td>PD-1,PD-2,PD-3</td>
+					<td>3</td>
+					<td>CEV</td>	
+					<td>60</td>
+					<td>GOR20020005 </td>
+					<td><b>FLISD2004A00502</b></td>
+					<td>962036</td>
+					<td>ONLINE</td>
+					<td>ONLINE</td>
+					<td>VIVO</td>
+					<td>29/09/2021</td>
+										<td> <a href = "http://192.168.202.24:8080/DataVision-WebApp/login.xhtml?" target="_blank">192.168.202.24 </td>  </a>
+
+				</tr>
+					<td>060</td>
+					<td>391,95</td>
+					<td>RIO VERDE</td>
+					<td>PD-1,PD-2</td>
+					<td>2</td>
+					<td>CEV</td>
+					<td>80</td>
+					<td>GOR20020020 </td>
+					<td><b>FLISD2003A00483</b></td>
+					<td>962018</td>
+					<td>OFFLINE</td>
+					<td>ONLINE</td>
+					<td>VIVO</td>
+					<td>19/10/2021</td>
+										<td> <a href = "http://192.168.202.28:8080/DataVision-WebApp/login.xhtml?" target="_blank"> 192.168.202.28</td>  </a>
+
+				</tr>
+
+					<td>060</td>
+					<td>386,5</td>
+					<td>RIO VERDE</td>
+					<td>PD-1,PD-2,PD-3</td>
+					<td>3</td>
+					<td>CEV</td>
+					<td>80</td>
+					<td>GOR20020025 </td>
+					<td><b>FLISD2003A00482</b></td>
+					<td>962017</td>
+					<td>OFFLINE</td>
+					<td>ONLINE</td>
+					<td>VIVO</td>
+					<td>19/10/2021</td>
+										<td> <a href = "http://192.168.202.26:8080/DataVision-WebApp/login.xhtml?" target="_blank"> 192.168.202.26</td>  </a>
+
+				</tr>
+
+					<td>060</td>
+					<td>385,5</td>
+					<td>RIO VERDE</td>
+					<td>PC-1,PC-2,PC-3</td>
+					<td>3</td>
+					<td>CEV</td>
+					<td>80</td>
+					<td>GOR20020018 </td>
+					<td><b>FLISD2003A00481</b></td>
+					<td>962016</td>
+					<td>OFFLINE</td>
+					<td>ONLINE</td>
+					<td>VIVO</td>
+					<td>18/10/2021</td>
+										<td> <a href = "http://192.168.202.22:8080/DataVision-WebApp/login.xhtml?" target="_blank"> 192.168.202.22</td>  </a>
+
+				</tr>
+
+					<td>452</td>
+					<td>187,5</td>
+					<td>ITUMBIARA</td>
+					<td>PC-1,PC-2</td>
+					<td>2</td>
+					<td>REV</td>
+					<td>60</td>
+					<td>GOB20020019  </td>
+					<td><b>FLICD2010A00580</b></td>
+					<td>962063</td>
+					<td>ONLINE</td>
+					<td>ONLINE</td>
+					<td>CLARO</td>
+					<td>20/11</td>
+										<td> <a href = "http://192.168.201.140:8080/DataVision-WebApp/login.xhtml?" target="_blank"> 192.168.201.140</td>  </a>
+
+				</tr>
+					<td>364</td>
+					<td>386</td>
+					<td>STA. RITA DO ARAGUAIA</td>
+					<td>PC-1,PC-2,PD-1,PD-2</td>
+					<td>4</td>
+					<td>REV</td>
+					<td>40</td>
+					<td>GOB20010002 </td>
+					<td><b>FLICD2003A00489</b></td>
+					<td>962025</td>
+					<td>OFFLINE</td>
+					<td>ONLINE</td>
+					<td>CLARO</td>
+					<td>15/12</td>
+										<td> <a href = "http://192.168.202.32:8080/DataVision-WebApp/login.xhtml?" target="_blank"> 192.168.202.32</td>  </a>
+
+				</tr>
+					<td>070</td>
+					<td>14,1</td>
+					<td>AGUAS LINDAS</td>
+					<td>PD-1,PD-2,PD-3</td>
+					<td>3</td>
+					<td>CEV</td>
+					<td>60</td>
+					<td>GOR20020023 </td>
+					<td><b>FLISD2004A00523</b></td>
+					<td>962057</td>
+					<td>ONLINE</td>
+					<td>ONLINE</td>
+					<td></td>
+					<td>30/09/2021</td>
+										<td> <a href = "http://192.168.201.128:8080/DataVision-WebApp/login.xhtml?" target="_blank"> 192.168.201.128</td>  </a>
+
+				</tr>
+					<td>070</td>
+					<td>14,1</td>
+					<td>AGUAS LINDAS</td>
+					<td>PC-1,PC-2,PC-3</td>
+					<td>3</td>
+					<td>CEV</td>
+					<td>60</td>
+					<td>GOR20020023 </td>
+					<td><b>FLISD2004A00522</b></td>
+					<td>962056</td>
+					<td>ONLINE</td>
+					<td>ONLINE</td>
+					<td></td>
+					<td>30/09/2021</td>
+										<td> <a href = "http://192.168.201.130:8080/DataVision-WebApp/login.xhtml?" target="_blank"> 192.168.201.130</td>  </a>
+
+				</tr>
+					<td>070</td>
+					<td>12,5</td>
+					<td>AGUAS LINDAS</td>
+					<td>PD-1,PD-2,PD-3</td>
+					<td>3</td>
+					<td>CEV</td>
+					<td>60</td>
+					<td>GOR20020006 </td>
+					<td><b>FLISD2004A00521</b></td>
+					<td>962055</td>
+					<td>ONLINE</td>
+					<td>ONLINE</td>
+					<td></td>
+					<td>30/09/2021</td>
+										<td> <a href = "http://192.168.201.124:8080/DataVision-WebApp/login.xhtml?" target="_blank"> 192.168.201.124</td>  </a>
+
+				</tr>
+					<td>070</td>
+					<td>12,5</td>
+					<td>AGUAS LINDAS</td>
+					<td>PC-1,PC-2,PC-3</td>
+					<td>3</td>
+					<td>CEV</td>
+					<td>60</td>
+					<td>GOR20020006 </td>
+					<td><b>FLISD2004A00520</b></td>
+					<td>962054</td>
+					<td>ONLINE</td>
+					<td>ONLINE</td>
+					<td></td>
+					<td>30/09/2021</td>
+										<td> <a href = "http://192.168.201.122:8080/DataVision-WebApp/login.xhtml?" target="_blank"> 192.168.201.122</td>  </a>
+
+				</tr>
+					<td>070</td>
+					<td>12</td>
+					<td>AGUAS LINDAS</td>
+					<td>PD-1,PD-2,PD-3</td>
+					<td>3</td>
+					<td>CEV</td>
+					<td>60</td>
+					<td>GOR20020007 </td>
+					<td><b>FLISD2004A00519</b></td>
+					<td>962053</td>
+					<td>ONLINE</td>
+					<td>ONLINE</td>
+					<td></td>
+					<td>25/07/2022</td>
+										<td> <a href = "http://192.168.201.118:8080/DataVision-WebApp/login.xhtml?" target="_blank"> 192.168.201.118</td>  </a>
+
+				</tr>
+					<td>070</td>
+					<td>12</td>
+					<td>AGUAS LINDAS</td>
+					<td>PC-1,PC-2</td>
+					<td>2</td>
+					<td>CEV</td>
+					<td>60</td>
+					<td>GOR20020007 </td>
+					<td><b>FLISD2004A00518</b></td>
+					<td>962052</td>
+					<td>ONLINE</td>
+					<td>ONLINE</td>
+					<td></td>
+					<td>01/10/2021</td>
+										<td> <a href = "http://192.168.201.120:8080/DataVision-WebApp/login.xhtml?" target="_blank"> 192.168.201.120</td>  </a>
+
+				</tr>
+					<td>452</td>
+					<td>47,7</td>
+					<td>RIO VERDE</td>
+					<td>PC-1,PD-1</td>
+					<td>2</td>
+					<td>REV</td>
+					<td>60</td>
+					<td>GOB20020018 </td>
+					<td><b>FLICD2003A00484</b></td>
+					<td>962020</td>
+					<td>OFFLINE</td>
+					<td>OFFLINE</td>
+					<td>RCOM TECNOLOGIA</td>
+					<td>18/10/2021</td>
+										<td> <a href = "http://192.168.202.30:8080/DataVision-WebApp/login.xhtml?" target="_blank"> 192.168.202.30</td>  </a>
+
+				</tr>
+					<td>020</td>
+					<td>46,3</td>
+					<td>BRASILIA</td>
+					<td>PC-1,PC-2</td>
+					<td>2</td>
+					<td>CEV</td>
+					<td>80</td>
+					<td>DFR20010001 </td>
+					<td><b>FLISD2002A00451</b></td>
+					<td>961001</td>
+					<td>ONLINE</td>
+					<td>ONLINE</td>
+					<td>CLARO</td>
+					<td>07/04/2022</td>
+										<td> <a href = "http://192.168.201.26:8080/DataVision-WebApp/login.xhtml?" target="_blank"> 192.168.201.26</td>  </a>
+
+				</tr>
+					<td>070</td>
+					<td>7,5</td>
+					<td>AGUAS LINDAS</td>
+					<td>PC-1,PC-2,PC-3</td>
+					<td>3</td>
+					<td>REV</td>
+					<td>60</td>
+					<td>GOB20020012 </td>
+					<td><b>FLICD2004A00508</b></td>
+					<td>962042</td>
+					<td>ONLINE</td>
+					<td>ONLINE</td>
+					<td>CLARO</td>
+					<td>12/11</td>
+										<td> <a href = "http://192.168.201.136:8080/DataVision-WebApp/login.xhtml?" target="_blank"> 192.168.201.136</td>  </a>
+
+				</tr>
+					<td>070</td>
+					<td>9,8</td>
+					<td>AGUAS LINDAS</td>
+					<td>PC-1,PC-2,PC-3</td>
+					<td>3</td>
+					<td>REV</td>
+					<td>60</td>
+					<td>GOB20010005 </td>
+					<td><b>FLICD2004A00514</b></td>
+					<td>962048</td>
+					<td>OFFLINE</td>
+					<td>ONLINE</td>
+					<td>CLARO</td>
+					<td>12/11</td>
+										<td> <a href = "http://192.168.202.42:8080/DataVision-WebApp/login.xhtml?" target="_blank"> 192.168.202.42</td>  </a>
+
+				</tr>
+					<td>070</td>
+					<td>9,8</td>
+					<td>AGUAS LINDAS</td>
+					<td>PD-1,PD-2,PD-3</td>
+					<td>3</td>
+					<td>REV</td>
+					<td>60</td>
+					<td>GOB20010005 </td>
+					<td><b>FLICD2004A00515</b></td>
+					<td>962049</td>
+					<td>OFFLINE</td>
+					<td>ONLINE</td>
+					<td>CLARO</td>
+					<td>12/11</td>
+										<td> <a href = "http://192.168.202.44:8080/DataVision-WebApp/login.xhtml?" target="_blank"> 192.168.202.44</td>  </a>
+
+				</tr><td>070</td>
+					<td>7,5</td>
+					<td>AGUAS LINDAS</td>
+					<td>PD-1,PD-2,PD-3</td>
+					<td>3</td>
+					<td>REV</td>
+					<td>60</td>
+					<td>GOB20020012</td>
+					<td><b>FLICD2004A00509</b></td>
+					<td>962043</td>
+					<td>ONLINE</td>
+					<td>ONLINE</td>
+					<td>CLARO</td>
+					<td>13/11</td>
+										<td> <a href = "http://192.168.201.138:8080/DataVision-WebApp/login.xhtml?" target="_blank"> 192.168.201.138</td>  </a>
+
+				</tr>
+				    <td>070</td>
+					<td>9,3</td>
+					<td>AGUAS LINDAS</td>
+					<td>PD-1,PD-2,PD-3</td>
+					<td>3</td>
+					<td>REV</td>
+					<td>60</td>
+					<td>GOB20020010 </td>
+					<td><b>FLICD2004A00513</b></td>
+					<td>962047</td>
+					<td>ONLINE</td>
+					<td>ONLINE</td>
+					<td>CLARO</td>
+					<td>13/11</td>
+										<td> <a href = "http://192.168.201.134:8080/DataVision-WebApp/login.xhtml?" target="_blank"> 192.168.201.134</td>  </a>
+
+				</tr>
+				    <td>070</td>
+					<td>9,3</td>
+					<td>AGUAS LINDAS</td>
+					<td>PC-1,PC-2,PC-3</td>
+					<td>3</td>
+					<td>REV</td>
+					<td>60</td>
+					<td>GOB20020010 </td>
+					<td><b>FLICD2004A00512</b></td>
+					<td>962046</td>
+					<td>ONLINE</td>
+					<td>ONLINE</td>
+					<td>CLARO</td>
+					<td>23/05/2022</td>
+										<td> <a href = "http://192.168.201.132:8080/DataVision-WebApp/login.xhtml?" target="_blank"> 192.168.201.132</td>  </a>
+
+				</tr>
+				    <td>020</td>
+					<td>196</td>
+					<td>POSSE</td>
+					<td>PD-1</td>
+					<td>1</td>
+					<td>CEV</td>
+					<td>80</td>
+					<td>GOR20060036 </td>
+					<td><b>FLISD2007A00564</b></td>
+					<td>962059</td>
+					<td>OFFLINE</td>
+					<td>OFFLINE</td>
+					<td>VIVO</td>
+					<td>17/11</td>
+										<td> <a href = "http://192.168.202.36:8080/DataVision-WebApp/login.xhtml?" target="_blank">192.168.202.36</td></a>
+
+				</tr>
+				    <td>020</td>
+					<td>198</td>
+					<td>POSSE</td>
+					<td>PD-1</td>
+					<td>1</td>
+					<td>CEV</td>
+					<td>80</td>
+					<td>GOR20060037 </td>
+					<td><b>FLISD2007A00565</b></td>
+					<td>962060</td>
+					<td>OFFLINE</td>
+					<td>OFFLINE</td>
+					<td>VIVO</td>
+					<td>17/11</td>
+										<td> <a href = "http://192.168.202.38:8080/DataVision-WebApp/login.xhtml?" target="_blank">192.168.202.38 </td> </a>
+
+				</tr>
+				    <td>020</td>
+					<td>251,3</td>
+					<td>POSSE</td>
+					<td>PD-1</td>
+					<td>1</td>
+					<td>CEV</td>
+					<td>80</td>
+					<td>GOR20020004 </td>
+					<td><b>FLISD2004A00501</b></td>
+					<td>962035</td>
+					<td>OFFLINE</td>
+					<td>ONLINE</td>
+					<td>LASER PROVEDOR</td>
+					<td>17/11</td>
+										<td> <a href = "http://192.168.202.40:8080/DataVision-WebApp/login.xhtml?" target="_blank"> 192.168.202.40</td> </a>
+
+				</tr>
+				   <td>070</td>
+					<td>5,7</td>
+					<td>BRASILIA</td>
+					<td>PD-1,PD-2</td>
+					<td>2</td>
+					<td>CEV</td>
+					<td>80</td>
+					<td>DFR23010011</td>
+					<td><b>FLISD2007A00563</b></td>
+					<td>961061</td>
+					<td>OFFLINE</td>
+					<td>ONLINE</td>
+					<td></td>
+					<td>17/01/2022</td>
+										<td> <a href = "http://192.168.202.54:8080/DataVision-WebApp/login.xhtml?" target="_blank"> 192.168.202.54</td> </a>
+
+				</tr>
+				   <td>020</td>
+					<td>24,85</td>
+					<td>BRASILIA</td>
+					<td>PD-1,PD-2</td>
+					<td>2</td>
+					<td>CEV</td>
+					<td>80</td>
+					<td>DFR20070009 </td>
+					<td><b>FLISD2009A00567</b></td>
+					<td>961058</td>
+					<td>OFFLINE</td>
+					<td>ONLINE</td>
+					<td>VIVO</td>
+					<td>25/01/2022</td>
+										<td> <a href = "http://192.168.202.52:8080/DataVision-WebApp/login.xhtml?" target="_blank"> 192.168.202.52</td> </a>
+
+				</tr>
+				   <td>070</td>
+					<td>15,636</td>
+					<td>BRASILIA</td>
+					<td>PC-1,PC-2</td>
+					<td>2</td>
+					<td>REV</td>
+					<td>60</td>
+					<td>DFB22020023</td>
+					<td><b>FLICD2004A00499</b></td>
+					<td>961065</td>
+					<td>ONLINE</td>
+					<td>ONLINE</td>
+					<td>VIVO</td>
+					<td>06/06/2022</td>
+										<td> <a href = "http://192.168.202.48:8080/DataVision-WebApp/login.xhtml?" target="_blank"> 192.168.202.48</td> </a>
+
+				</tr>
+				   <td>080</td>
+					<td>94,12</td>
+					<td>VILA PROPICIO</td>
+					<td>PC-1,PD-1</td>
+					<td>2</td>
+					<td>REV</td>
+					<td>50</td>
+					<td>GOB20020014</td>
+					<td><b>FLICD2004A00498</b></td>
+					<td>962033</td>
+					<td>OFFLINE</td>
+					<td>ONLINE</td>
+					<td>POWER NET</td>
+					<td>17/12</td>
+										<td> <a href = "http://192.168.202.46:8080/DataVision-WebApp/login.xhtml?" target="_blank"> 192.168.202.46</td> </a>
+
+				</tr>
+				   <td>060</td>
+					<td>165,2</td>
+					<td>GOIANIA</td>
+					<td>PD-1,PD-2</td>
+					<td>2</td>
+					<td>CEV</td>
+					<td>80</td>
+					<td>GOR20030034 </td>
+					<td><b>FLISD2004A00492</b></td>
+					<td>962027</td>
+					<td>ONLINE</td>
+					<td>ONLINE</td>
+					<td>CLARO</td>
+					<td>22/02/2022</td>
+										<td> <a href = "http://192.168.201.142:8080/DataVision-WebApp/login.xhtml?" target="_blank"> 192.168.201.142</td> </a>
+
+				</tr>
+				   <td>060</td>
+					<td>164,35</td>
+					<td>GOIANIA</td>
+					<td>PC-1,PC-2,PC-3</td>
+					<td>3</td>
+					<td>CEV</td>
+					<td>80</td>
+					<td>GOR20030033 </td>
+					<td><b>FLISD2004A00471</b></td>
+					<td>962026</td>
+					<td>ONLINE</td>
+					<td>ONLINE</td>
+					<td></td>
+					<td>22/02/2022</td>
+										<td> <a href = "http://192.168.201.146:8080/DataVision-WebApp/login.xhtml?" target="_blank"> 192.168.201.146</td> </a>
+
+				</tr>
+					<td>060</td>
+					<td>164,2</td>
+					<td>GOIANIA</td>
+					<td>PD-1,PD-2,PD-3</td>
+					<td>3</td>
+					<td>CEV</td>
+					<td>80</td>
+					<td>GOR20020024 </td>
+					<td><b>FLISD2004A00493</b></td>
+					<td>962028</td>
+					<td>ONLINE</td>
+					<td>ONLINE</td>
+					<td></td>
+					<td>22/02/2022</td>
+										<td> <a href = "http://192.168.201.144:8080/DataVision-WebApp/login.xhtml?" target="_blank"> 192.168.201.144</td> </a>
+
+				</tr>
+					<td>070</td>
+					<td>4,5</td>
+					<td>BRASILIA</td>
+					<td>PD-1,PD-2</td>
+					<td>2</td>
+					<td>CEV</td>
+					<td>80</td>
+					<td>DFR23010010</td>
+					<td><b>FLISD2002A00457</b></td>
+					<td>961006</td>
+					<td>OFFLINE</td>
+					<td>ONLINE</td>
+					<td>CLARO</td>
+					<td>29/01</td>
+										<td> <a href = "http://192.168.201.32:8080/DataVision-WebApp/login.xhtml?" target="_blank"> 192.168.201.32</td> </a>
+
+				</tr>
+				<td>070</td>
+					<td>7,8</td>
+					<td>BRASILIA</td>
+					<td>PC-1,PC-2</td>
+					<td>2</td>
+					<td>REV</td>
+					<td>60</td>
+					<td>DFB20010001</td>
+					<td><b>FLICD2002A00459</b></td>
+					<td>961009</td>
+					<td>ONLINE</td>
+					<td>ONLINE</td>
+					<td>CLARO</td>
+					<td>20/12/2021</td>
+										<td> <a href = "http://192.168.201.22:8080/DataVision-WebApp/login.xhtml?" target="_blank"> 192.168.201.22</td> </a>
+
+				</tr>
+					<td>080</td>
+					<td>11.4</td>
+					<td>BRASILIA</td>
+					<td>PC-1,PD-1</td>
+					<td>2</td>
+					<td>REV</td>
+					<td>60</td>
+					<td>DFB20070019</td>
+					<td><b>FLICD2009A00566</b></td>
+					<td>961062</td>
+					<td>OFFLINE</td>
+					<td>ONLINE</td>
+					<td>CLARO</td>
+					<td>17/11/2021</td>
+										<td> <a href = "http://192.168.202.50:8080/DataVision-WebApp/login.xhtml?" target="_blank">192.168.202.50 </td> </a>
+
+				</tr>
+				<td>251</td>
+					<td>34,6</td>
+					<td>BRASILIA</td>
+					<td>PC-1,PD-1</td>
+					<td>2</td>
+					<td>REV</td>
+					<td>50</td>
+					<td>DFB24050030</td>
+					<td><b>FLICD2002B00466</b></td>
+					<td>961071</td>
+					<td>OFFLINE</td>
+					<td>ONLINE</td>
+					<td>VIVO</td>
+					<td>25/01/2022</td>
+										<td> <a href = "http://192.168.202.10:8080/DataVision-WebApp/login.xhtml?" target="_blank">192.168.202.10 </td> </a>
+
+				</tr>
+				<td>251</td>
+					<td>34</td>
+					<td>BRASILIA</td>
+					<td>PD-1</td>
+					<td>1</td>
+					<td>CEV</td>
+					<td>60</td>
+					<td>DFR20020007 </td>
+					<td><b>FLISD2002A00456</b></td>
+					<td>961019</td>
+					<td>OFFLINE</td>
+					<td>ONLINE</td>
+					<td>VIVO</td>
+					<td>11/04/2022</td>
+										<td> <a href = "http://192.168.202.8:8080/DataVision-WebApp/login.xhtml?" target="_blank">192.168.202.8</td> </a>
+
+				</tr>
+				<td>251</td>
+					<td>38,1</td>
+					<td>BRASILIA</td>
+					<td>PD-1</td>
+					<td>1</td>
+					<td>REV</td>
+					<td>60</td>
+					<td>DFB20090020</td>
+					<td><b>FLICD2002A00468</b></td>
+					<td>961020</td>
+					<td>ONLINE</td>
+					<td>ONLINE</td>
+					<td>CLARO</td>
+					<td>25/01/2022</td>
+										<td> <a href = "http://192.168.201.46:8080/DataVision-WebApp/login.xhtml?" target="_blank">192.168.201.46 </td> </a>
+
+				</tr>
+				<td>251</td>
+					<td>37,7</td>
+					<td>BRASILIA</td>
+					<td>PC-1</td>
+					<td>1</td>
+					<td>REV</td>
+					<td>60</td>
+					<td>DFB20090021</td>
+					<td><b>FLICD2004A00500</b></td>
+					<td>961021</td>
+					<td>ONLINE</td>
+					<td>ONLINE</td>
+					<td>VIVO</td>
+					<td>25/01/2022</td>
+										<td> <a href = "http://192.168.201.126:8080/DataVision-WebApp/login.xhtml?" target="_blank">192.168.201.126 </td> </a>
+
+				</tr>
+				<td>070</td>
+					<td>19,3</td>
+					<td>BRASILIA</td>
+					<td>PC-1,PC-2</td>
+					<td>2</td>
+					<td>CEV</td>
+					<td>60</td>
+					<td>DFR20020004 </td>
+					<td><b>FLISD2002A00453</b></td>
+					<td>961014</td>
+					<td>ONLINE</td>
+					<td>ONLINE</td>
+					<td>VIVO</td>
+					<td>26/01/2022</td>
+										<td> <a href = "http://192.168.201.56:8080/DataVision-WebApp/login.xhtml?" target="_blank"> 192.168.201.56</td> </a>
+										</tr>
+											<td>070</td>
+					<td>9,4</td>
+					<td>BRASILIA</td>
+					<td>PD-1,,PD-3</td>
+					<td>3</td>
+					<td>REV</td>
+					<td>60</td>
+					<td>DFB23040025</td>
+					<td><b>FLICD0523A00761</b></td>
+					<td>961067</td>
+					<td>ONLINE</td>
+					<td>ONLINE</td>
+					<td>VIVO</td>
+					<td>23/05/2023</td>
+										<td> <a href = "http://192.168.201.30:8080/DataVision-WebApp/login.xhtml?" target="_blank"> 192.168.201.30</td> </a>
+										</tr>
+											<td>070</td>
+					<td>13,5</td>
+					<td>BRASILIA</td>
+					<td>PC-1,PC-2</td>
+					<td>2</td>
+					<td>REV</td>
+					<td>60</td>
+					<td>DFB20020009 </td>
+					<td><b>FLICD2002A00467</b></td>
+					<td>961012</td>
+					<td>ONLINE</td>
+					<td>ONLINE</td>
+					<td>CLARO</td>
+					<td>17/01/2022</td>
+										<td> <a href = "http://192.168.201.48:8080/DataVision-WebApp/login.xhtml?" target="_blank"> 192.168.201.48</td> </a></tr>
+					
+					<td>070</td>					
+					<td>13,7</td>
+					<td>BRASILIA</td>
+					<td>PD-1,PD-2</td>
+					<td>2</td>
+					<td>REV</td>
+					<td>60</td>
+					<td>DFB20010002</td>
+					<td><b>FLICD2002A00460</b></td>
+					<td>961013</td>
+					<td>ONLINE</td>
+					<td>ONLINE</td>
+					<td>CLARO</td>
+					<td>17/02/2022</td>
+										<td> <a href = "http://192.168.201.24:8080/DataVision-WebApp/login.xhtml?" target="_blank"> 192.168.201.24</td> </a>
+										</tr>
+					<td>070</td>					
+					<td>2,64</td>
+					<td>BRASILIA</td>
+					<td>PD-1,PD-2,PD-3</td>
+					<td>3</td>
+					<td>REV</td>
+					<td>60</td>
+					<td>DFB23040026</td>
+					<td><b>FLICD0523A00762</b></td>
+					<td>961068</td>
+					<td>ONLINE</td>
+					<td>ONLINE</td>
+					<td>VIVO</td>
+					<td>23/05/2023</td>
+										<td> <a href = "http://192.168.201.42:8080/DataVision-WebApp/login.xhtml?" target="_blank"> 192.168.201.42</td> </a>
+										</tr>
+					<td>060</td>					
+					<td>461,9</td>
+					<td>JATAI</td>
+					<td>PD-1,PD-2</td>
+					<td>2</td>
+					<td>CEV</td>
+					<td>90\110</td>
+					<td>GOR20030029</td>
+					<td><b>FLISD2004A00494</b></td>
+					<td>962029</td>
+					<td>OFFLINE</td>
+					<td>ONLINE</td>
+					<td></td>
+					<td>13/01/2022</td>
+										<td> <a href = "http://192.168.202.66:8080/DataVision-WebApp/login.xhtml?" target="_blank"> 192.168.202.66</td> </a>
+										</tr>
+					<td>060</td>					
+					<td>359</td>
+					<td>RIO VERDE</td>
+					<td>PD-1,PD-2</td>
+					<td>2</td>
+					<td>CEV</td>
+					<td>90\110</td>
+					<td>GOR20030031</td>
+					<td><b>FLISD0824A00850</b></td>
+					<td>962079</td>
+					<td>OFFLINE</td>
+					<td>ONLINE</td>
+					<td>VIVO</td>
+					<td>18/10/2021</td>
+										<td> <a href = "http://192.168.202.68:8080/DataVision-WebApp/login.xhtml?" target="_blank"> 192.168.202.68</td> </a>
+										</tr>
+					<td>060</td>					
+					<td>375,3</td>
+					<td>RIO VERDE</td>
+					<td>PD-1,PD-2</td>
+					<td>2</td>
+					<td>CEV</td>
+					<td>90\110</td>
+					<td>GOR20030032</td>
+					<td><b>FLISD2004A00496</b></td>
+					<td>962031</td>
+					<td>OFFLINE</td>
+					<td>ONLINE</td>
+					<td>CLARO</td>
+					<td>07/04/2022</td>
+										<td> <a href = "http://192.168.202.72:8080/DataVision-WebApp/login.xhtml?" target="_blank"> 192.168.202.72</td> </a>
+										</tr>
+					<td>060</td>					
+					<td>377,5</td>
+					<td>RIO VERDE</td>
+					<td>PC-1,PC-2</td>
+					<td>2</td>
+					<td>CEV</td>
+					<td>90\110</td>
+					<td>GOR20030030</td>
+					<td><b>FLISD2004A00497</b></td>
+					<td>962032</td>
+					<td>OFFLINE</td>
+					<td>ONLINE</td>
+					<td>VIVO</td>
+					<td>16/05/2022</td>
+										<td> <a href = "http://192.168.202.70:8080/DataVision-WebApp/login.xhtml?" target="_blank"> 192.168.202.70</td> </a>
+										</tr>		
+					<td>070</td>					
+					<td>4</td>
+					<td>BRASILIA</td>
+					<td>PC-1,PC-2</td>
+					<td>2</td>
+					<td>CEV</td>
+					<td>80</td>
+					<td>DFR20020002</td>
+					<td><b>FLISD2002A00455</b></td>
+					<td>961005</td>
+					<td>ONLINE</td>
+					<td>ONLINE</td>
+					<td>CLARO</td>
+					<td>17/02/2022</td>
+										<td> <a href = "http://192.168.201.28:8080/DataVision-WebApp/login.xhtml?" target="_blank"> 192.168.201.28</td> </a>
+										</tr>										
+					<td>070</td>					
+					<td>11,75</td>
+					<td>BRASILIA</td>
+					<td>PD-1,PD-2</td>
+					<td>2</td>
+					<td>CEV</td>
+					<td>80</td>
+					<td>DFR23010012</td>
+					<td><b>FLISD2002A00452</b></td>
+					<td>961011</td>
+					<td>ONLINE</td>
+					<td>ONLINE</td>
+					<td>VIVO</td>
+					<td>01/02/2022</td>
+										<td> <a href = "http://192.168.201.44:8080/DataVision-WebApp/login.xhtml?" target="_blank"> 192.168.201.44</td> </a>
+										</tr>																				
+					   <td>020</td>
+					<td>185,4</td>
+					<td>ALVORADA DO NORTE</td>
+					<td>PD-1</td>
+					<td>1</td>
+					<td>REV</td>
+					<td>60</td>
+					<td>GOB21110021</td>
+					<td><b>FLICD2202A00594</b></td>
+					<td>962064</td>
+					<td>OFFLINE</td>
+					<td>ONLINE</td>
+					<td>VIVO</td>
+					<td></td>
+										<td> <a href = "http://192.168.201.192:8080/DataVision-WebApp/login.xhtml?" target="_blank"> 192.168.201.192</td> </a>
+
+				</tr>
+				   <td>020</td>
+					<td>21,7</td>
+					<td>FORMOSA</td>
+					<td>PD-1</td>
+					<td>1</td>
+					<td>REV</td>
+					<td>60</td>
+					<td>GOB21110022</td>
+					<td><b>FLICD2202A00595</b></td>
+					<td>962065</td>
+					<td>OFFLINE</td>
+					<td>ONLINE</td>
+					<td>VIVO</td>
+					<td></td>
+										<td> <a href = "http://192.168.201.194:8080/DataVision-WebApp/login.xhtml?" target="_blank"> 192.168.201.194</td> </a>
+
+				</tr>
+				
+			 <td>060</td>
+					<td>45,940</td>
+					<td>APARECIDA DE GOIANIA</td>
+					<td>PC-1,PC-2</td>
+					<td>2</td>
+					<td>CEV</td>
+					<td>60</td>
+					<td>GOR23020040</td>
+					<td><b>FLISD2701A00704</b></td>
+					<td>962068</td>
+					<td>ONLINE</td>
+					<td>ONLINE</td>
+					<td>CLARO</td>
+					<td></td>
+										<td> <a href = "http://192.168.201.196:8080/DataVision-WebApp/login.xhtml?" target="_blank"> 192.168.201.196</td> </a>
+
+				</tr>
+				 <td>060</td>
+					<td>45,950</td>
+					<td>APARECIDA DE GOIANIA</td>
+					<td>PD-1,PD-2</td>
+					<td>2</td>
+					<td>CEV</td>
+					<td>60</td>
+					<td>GOR23020041</td>
+					<td><b>FLISD2701A00705</b></td>
+					<td>962069</td>
+					<td>ONLINE</td>
+					<td>ONLINE</td>
+					<td>CLARO</td>
+					<td></td>
+										<td> <a href = "http://192.168.201.198:8080/DataVision-WebApp/login.xhtml?" target="_blank"> 192.168.201.198</td> </a>
+
+				</tr>
+				 <td>070</td>
+					<td>189,800</td>
+					<td>ITABERAI</td>
+					<td>PC-1,PD-1</td>
+					<td>2</td>
+					<td>REV</td>
+					<td>60</td>
+					<td>GOB23070025</td>
+					<td><b>FLICD0423A00758</b></td>
+					<td>962070</td>
+					<td>OFFLINE</td>
+					<td>ONLINE</td>
+					<td>VIVO</td>
+					<td></td>
+										<td> <a href = "http://192.168.201.200:8080/DataVision-WebApp/login.xhtml?" target="_blank"> 192.168.201.200</td> </a>
+
+				</tr>
+				 <td>080</td>
+					<td>4,900</td>
+					<td>BRASILIA</td>
+					<td>PC-1</td>
+					<td>1</td>
+					<td>REV</td>
+					<td>50</td>
+					<td>DFB23090028</td>
+					<td><b>FLICD0823A00763</b></td>
+					<td>961069</td>
+					<td>ONLINE</td>
+					<td>ONLINE</td>
+					<td>VIVO</td>
+					<td></td>
+										<td> <a href = "http://192.168.201.202:8080/DataVision-WebApp/login.xhtml?" target="_blank"> 192.168.201.202</td> </a>
+
+				</tr>
+				<td>080</td>
+					<td>5,100</td>
+					<td>BRASILIA</td>
+					<td>PD-1</td>
+					<td>1</td>
+					<td>REV</td>
+					<td>50</td>
+					<td>DFB23090029</td>
+					<td><b>FLICD0823A00764</b></td>
+					<td>961070</td>
+					<td>ONLINE</td>
+					<td>ONLINE</td>
+					<td>VIVO</td>
+					<td></td>
+										<td> <a href = "http://192.168.201.204:8080/DataVision-WebApp/login.xhtml?" target="_blank"> 192.168.201.204</td> </a>
+
+				</tr>
+				<td>364</td>
+					<td>199,400</td>
+					<td>JATAI</td>
+					<td>PD-1,PD-2</td>
+					<td>2</td>
+					<td>REV</td>
+					<td>60</td>
+					<td>GOB23100027</td>
+					<td><b>FLICD0723A00759</b></td>
+					<td>962071</td>
+					<td>OFFLINE</td>
+					<td>ONLINE</td>
+					<td></td>
+					<td></td>
+										<td> <a href = "http://192.168.201.206:8080/DataVision-WebApp/login.xhtml?" target="_blank"> 192.168.201.206</td> </a>
+
+				</tr>
+				
+				<td>060</td>
+					<td>20</td>
+					<td>JATAI</td>
+					<td>PC-1,PC-2</td>
+					<td>2</td>
+					<td>CEV</td>
+					<td>80</td>
+					<td>GOR24010044</td>
+					<td><b>FLISD0823A00771</b></td>
+					<td>962074</td>
+					<td>OFFLINE</td>
+					<td>ONLINE</td>
+					<td>CLARO</td>
+					<td></td>
+										<td> <a href = "http://192.168.201.210:8080/DataVision-WebApp/login.xhtml?" target="_blank"> 192.168.201.210</td> </a>
+
+				</tr>
+				
+				<td>060</td>
+					<td>21,1</td>
+					<td>JATAI</td>
+					<td>PC-1,PC-2</td>
+					<td>2</td>
+					<td>CEV</td>
+					<td>80</td>
+					<td>GOR24010042</td>
+					<td><b>FLISD0823A00770</b></td>
+					<td>962073</td>
+					<td>OFFLINE</td>
+					<td>ONLINE</td>
+					<td>CLARO</td>
+					<td></td>
+										<td> <a href = "http://192.168.201.208:8080/DataVision-WebApp/login.xhtml?" target="_blank"> 192.168.201.208</td> </a>
+
+				</tr>
+				
+				<td>060</td>
+					<td>21,9</td>
+					<td>JATAI</td>
+					<td>PD-1,PD-2</td>
+					<td>2</td>
+					<td>CEV</td>
+					<td>80</td>
+					<td>GOR24010043</td>
+					<td><b>FLISD0823A00769</b></td>
+					<td>962072</td>
+					<td>OFFLINE</td>
+					<td>ONLINE</td>
+					<td>CLARO</td>
+					<td></td>
+										<td> <a href = "http://192.168.201.212:8080/DataVision-WebApp/login.xhtml?" target="_blank"> 192.168.201.212</td> </a>
+
+				</tr>
+				
+				<td>251</td>
+					<td>25,420</td>
+					<td>CRISTALINA</td>
+					<td>PC-1,PD-1</td>
+					<td>2</td>
+					<td>REV</td>
+					<td>40</td>
+					<td>GOB24030030</td>
+					<td><b>FLICD0823A00766</b></td>
+					<td>962075</td>
+					<td>OFFLINE</td>
+					<td>ONLINE</td>
+					<td>VIVO</td>
+					<td></td>
+										<td> <a href = "http://192.168.201.214:8080/DataVision-WebApp/login.xhtml?" target="_blank"> 192.168.201.214</td> </a>
+
+				</tr>
+				<td>251</td>
+					<td>30</td>
+					<td>CRISTALINA</td>
+					<td>PC-1,PD-1</td>
+					<td>2</td>
+					<td>REV</td>
+					<td>40</td>
+					<td>GOB24020028</td>
+					<td><b>FLICD0823A00767</b></td>
+					<td>962076</td>
+					<td>OFFLINE</td>
+					<td>ONLINE</td>
+					<td>VIVO</td>
+					<td></td>
+										<td> <a href = "http://192.168.201.216:8080/DataVision-WebApp/login.xhtml?" target="_blank"> 192.168.201.216</td> </a>
+
+				</tr>
+				<td>251</td>
+					<td>32</td>
+					<td>CRISTALINA</td>
+					<td>PC-1,PD-1</td>
+					<td>2</td>
+					<td>REV</td>
+					<td>40</td>
+					<td>GOB24030029</td>
+					<td><b>FLICD0823A00768</b></td>
+					<td>962077</td>
+					<td>OFFLINE</td>
+					<td>ONLINE</td>
+					<td>VIVO</td>
+					<td></td>
+										<td> <a href = "http://192.168.201.218:8080/DataVision-WebApp/login.xhtml?" target="_blank"> 192.168.201.218</td> </a>
+
+				</tr>
+				<td>364</td>
+					<td>200</td>
+					<td>JATAI</td>
+					<td>PD-1,PD-2</td>
+					<td>2</td>
+					<td>REV</td>
+					<td>60</td>
+					<td>GOB24070031</td>
+					<td><b>FLICD0824A00849</b></td>
+					<td>962080</td>
+					<td>OFFLINE</td>
+					<td>ONLINE</td>
+					<td>VIVO</td>
+					<td></td>
+										<td> <a href = "http://192.168.201.222:8080/DataVision-WebApp/login.xhtml?" target="_blank"> 192.168.201.222</td> </a>
+
+				</tr>
+	
+	
+	
+					
+	
+	
+					
+	
+	
+	
+	
+	
+	
+	
+	
+	
+					</head>
+				</tbody>
+			</table>
+		</div>
+
+		<script>
+
+$(function(){
+	$("#tabela input").keyup(function(){		
+
+		var index = $(this).parent().index();
+		var nth = "#tabela td:nth-child("+(index+1).toString()+")";
+		var valor = $(this).val().toUpperCase();
+		$("#tabela tbody tr").show();
+		$(nth).each(function(){
+			if($(this).text().toUpperCase().indexOf(valor) < 0){
+				$(this).parent().hide();
+			}
+		});
+	});
+
+	$("#tabela input").blur(function(){
+		$(this).val("");
+	});	
+});
+
+$(function(){
+	$(".input-search").keyup(function(){
+		//pega o css da tabela 
+		var tabela = $(this).attr('alt');
+		if( $(this).val() != ""){
+			$("."+tabela+" tbody>tr").hide();
+			$("."+tabela+" td:contains-ci('" + $(this).val() + "')").parent("tr").show();
+		} else{
+			$("."+tabela+" tbody>tr").show();
+		}
+	});	
+});
+$.extend($.expr[":"], {
+	"contains-ci": function(elem, i, match, array) {
+		return (elem.textContent || elem.innerText || $(elem).text() || "").toLowerCase().indexOf((match[3] || "").toLowerCase()) >= 0;
+	}
+});	
+
+// Função para alternar a exibição do menu
+function toggleMenu() {
+  var menu = document.getElementById('menu');
+  menu.style.display = (menu.style.display === 'block' ? 'none' : 'block');
+}
+
+// Adiciona um event listener para fechar o menu ao clicar fora dele
+document.addEventListener('click', function (event) {
+  var menu = document.getElementById('menu');
+  var menuIcon = document.getElementById('menu-icon');
+
+  // Verifica se o clique ocorreu fora do menu e do ícone de menu
+  if (event.target !== menu && event.target !== menuIcon) {
+    menu.style.display = 'none'; // Fecha o menu
+  }
+});
+
+// Adiciona um event listener para fechar o menu ao pressionar a tecla "Esc"
+document.addEventListener('keydown', function (event) {
+  var menu = document.getElementById('menu');
+
+  // Verifica se a tecla pressionada é a tecla "Esc" (código 27)
+  if (event.key === 'Escape' || event.keyCode === 27) {
+    menu.style.display = 'none'; // Fecha o menu
+  }
+});
+
+
+
+
+		</script>
+	</body>
+	
+	</html>
+	
